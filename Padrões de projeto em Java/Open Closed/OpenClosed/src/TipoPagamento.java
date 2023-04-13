@@ -1,0 +1,1 @@
+public enum TipoPagamento {Credito, Debito, Pix}
