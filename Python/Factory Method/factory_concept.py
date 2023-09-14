@@ -1,5 +1,5 @@
 class Creator:
-    "Factory Class"
+    "factory Class"
 
     @staticmethod
     def create_object(type):

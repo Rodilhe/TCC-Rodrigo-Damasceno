@@ -67,7 +67,7 @@ class FilialSP(Observer):
         print('Filial Rio cardapio:')
         print(self.cardapio)
 
-#Cliente
+#adapter.state.state.clima.Cliente
 if __name__ == '__main__':
 
     filial = Matriz()

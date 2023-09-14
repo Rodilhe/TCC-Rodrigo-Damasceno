@@ -1,13 +1,13 @@
-class VGA:
+class adapter.VGA:
     def conectaNaEntradaVGA(self):
-        print(f"Cabo VGA conectado!")
+        print(f"Cabo adapter.VGA conectado!")
     pass
-class HDMI:
+class adapter.HDMI:
     def conectaNaEntradaHDMI(self):
-        print(f"Cabo HDMI conectado!")
+        print(f"Cabo adapter.HDMI conectado!")
     pass
-class AdaptaHDMI(HDMI):
-    def __init__(self, vga: VGA):
+class AdaptaHDMI(adapter.HDMI):
+    def __init__(self, vga: adapter.VGA):
         self.adaptadorVGA = vga    
     def conectaNaEntradaHDMI(self):
         self.adaptadorVGA.conectaNaEntradaVGA(self)
@@ -15,6 +15,6 @@ class AdaptaHDMI(HDMI):
     pass
 
 if __name__ == "__main__":
-    caboVGA = VGA
+    caboVGA = adapter.VGA
     adaptadorA = AdaptaHDMI(caboVGA)
     adaptadorA.conectaNaEntradaHDMI()

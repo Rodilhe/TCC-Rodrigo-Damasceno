@@ -1,16 +1,16 @@
-class Loja:
+class facade.Loja:
     def __initi__ (self):
-        print('Loja Online: Seja bem vindo! \n')
+        print('facade.Loja Online: Seja bem vindo! \n')
 
     def pedido(self):
-        self.receber_pedido = RecebePedido()
+        self.receber_pedido = facade.RecebePedido()
         self.receber_pedido.recebePedido()
-        self.confirmar_pagamento = ConfirmaPagamento()
+        self.confirmar_pagamento = facade.ConfirmaPagamento()
         self.confirmar_pagamento.confirmaPagamento()
-        self.separar_pedido = SeparaPedido()
-        self.enviar_pedido = EnviaPedido()
+        self.separar_pedido = facade.SeparaPedido()
+        self.enviar_pedido = facade.EnviaPedido()
 
-class RecebePedido:
+class facade.RecebePedido:
     def __init__(self):
         print('Recebendo pedido... \n')   
         
@@ -21,7 +21,7 @@ class RecebePedido:
         if self.pedido_ok():
             print('Pedido confirmado!\n')
 
-class ConfirmaPagamento:
+class facade.ConfirmaPagamento:
     def __init__(self):
         print('Verificando método de pagamento...\n')
     
@@ -30,23 +30,23 @@ class ConfirmaPagamento:
     
     def confirmaPagamento(self):
         if self.pagamento_ok():
-            print('Pagamento ok!\n')
+            print('openclosed.Pagamento ok!\n')
 
-class SeparaPedido:
+class facade.SeparaPedido:
     def __init__(self):
         print('Separando pedido e preparando para envio...\n')
 
-class EnviaPedido:
+class facade.EnviaPedido:
     def __init__(self):
         print('Pedido enviado!')
 
 class Site:
     def __init__(self):
-        print('Cliente iniciou visita ao site')
+        print('adapter.state.state.clima.Cliente iniciou visita ao site')
 
     def recebeCompra(self):
-        ('Cliente confirmou carrinho de compras e iniciará pedido...')
-        pe = Loja()
+        ('adapter.state.state.clima.Cliente confirmou carrinho de compras e iniciará pedido...')
+        pe = facade.Loja()
         pe.pedido()
 
 if __name__ == '__main__':
